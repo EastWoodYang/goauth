@@ -1,13 +1,13 @@
 # goauth
+
 Oauth2 QQ and WeChat for Golang
 
-Example:
----------------
+## Example:
 
-QQ oauth
-=====
+# QQ oauth
+
 ```
-import "github.com/sanxia/goauth"
+import "github.com/EastWoodYang/goauth"
 
 qqOauth := goauth.NewQq("you app id", "you app secret", "you callback url")
 
@@ -16,9 +16,8 @@ qqToken, err := qqOauth.GetAccessToken(code)
 qqUserInfo, err := qqOauth.GetUserInfo(qqToken.AccessToken, qqToken.OpenId)
 ```
 
+# WeChat Oauth
 
-WeChat Oauth
-=====
 ```
 weChatOauth := goauth.NewWeChat("you app id", "you app secret", "you callback url")
 
