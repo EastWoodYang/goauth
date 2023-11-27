@@ -52,7 +52,7 @@ func NewWeChat(clientId, clientSecret, callbackUri string) IOauth {
 	oauth.ClientSecret = clientSecret
 	oauth.CallbackUri = callbackUri
 
-	oauth.AuthorizeCodeUri = "https://open.weixin.qq.com/connect/qrconnect"
+	oauth.AuthorizeCodeUri = "https://open.weixin.qq.com/connect/oauth2/authorize"
 	oauth.AccessTokenUri = "https://api.weixin.qq.com/sns/oauth2/access_token"
 	oauth.RefreshTokenUri = "https://api.weixin.qq.com/sns/oauth2/refresh_token"
 	oauth.UserInfoUri = "https://api.weixin.qq.com/sns/userinfo"
@@ -81,7 +81,7 @@ func (s *OauthWeChat) SetUri(uriType OauthUriType, uri string) {
  * state, scope
  * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 func (s *OauthWeChat) GetAuthorizeUrl(args ...string) string {
-	state, scope := "wechat", "snsapi_login"
+	state, scope := "wechat", "snsapi_userinfo"
 
 	argCount := len(args)
 	if argCount > 0 {
@@ -102,7 +102,7 @@ func (s *OauthWeChat) GetAuthorizeUrl(args ...string) string {
 
 	queryString := glib.ToQueryString(params)
 
-	return s.AuthorizeCodeUri + "?" + queryString
+	return s.AuthorizeCodeUri + "?" + queryString + "#wechat_redirect"
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
