@@ -1,4 +1,4 @@
-module github.com/sanxia/goauth
+module github.com/EastWoodYang/goauth
 
 go 1.16
 
