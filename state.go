@@ -3,10 +3,8 @@ package goauth
 import (
 	"fmt"
 	"time"
-)
 
-import (
-	"github.com/sanxia/glib"
+	"github.com/EastWoodYang/glib"
 )
 
 /* ================================================================================

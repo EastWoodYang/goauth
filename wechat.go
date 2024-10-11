@@ -1,7 +1,7 @@
 package goauth
 
 import (
-	"github.com/sanxia/glib"
+	"github.com/EastWoodYang/glib"
 )
 
 /* ================================================================================
@@ -15,7 +15,7 @@ type (
 		Oauth
 	}
 
-    //微信访问Token信息响应结构
+	//微信访问Token信息响应结构
 	WeChatAccessTokenResponse struct {
 		ErrCode      string `form:"errcode" json:"errcode"`
 		ErrMsg       string `form:"errmsg" json:"errmsg"`

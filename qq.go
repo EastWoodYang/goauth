@@ -2,10 +2,8 @@ package goauth
 
 import (
 	"fmt"
-)
 
-import (
-	"github.com/sanxia/glib"
+	"github.com/EastWoodYang/glib"
 )
 
 /* ================================================================================
